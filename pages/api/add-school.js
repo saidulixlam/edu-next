@@ -1,5 +1,3 @@
-// pages/api/add-school.js
-
 export const schools = [];
 
 export default function handler(req, res) {
@@ -17,14 +15,9 @@ export default function handler(req, res) {
       email,
     };
 
-    // Log the existing schools array before adding the new school
-    console.log('Existing schools:', schools);
-
-    // Add the new school to the array
+    
     schools.push(newSchool);
 
-    // Log the updated schools array after adding the new school
-    console.log('Updated schools:', schools);
 
     res.status(201).json({ message: 'School added successfully', school: newSchool });
   } else {

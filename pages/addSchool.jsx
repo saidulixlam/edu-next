@@ -1,8 +1,8 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
 function MyForm() {
-  const { handleSubmit, control, setValue, reset } = useForm();
+  const { handleSubmit, control, setValue} = useForm();
   const [successMessage, setSuccessMessage] = useState('');
 
   const onSubmit = async (data) => {
@@ -19,27 +19,21 @@ function MyForm() {
         const result = await response.json();
         console.log('School added successfully:', result.school);
 
-        // Clear form fields using setValue
+
         Object.keys(data).forEach((field) => {
           setValue(field, '');
         });
 
-        // Alternatively, you can use reset() function
-        // reset();
 
-        // Display success message
         setSuccessMessage('School added successfully');
 
-        // Add your logic here:
-        // For example, you can update the state, show a success message,
-        // or navigate to another page.
       } else {
         console.error('Failed to add school');
-        // Handle error
+
       }
     } catch (error) {
       console.error('Error:', error);
-      // Handle error
+
     }
   };
 
@@ -53,7 +47,7 @@ function MyForm() {
           </div>
         )}
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Name */}
+
           <label className="block mb-4">
             <span className="text-gray-700">Name:</span>
             <Controller
@@ -69,7 +63,7 @@ function MyForm() {
             />
           </label>
 
-          {/* Address */}
+
           <label className="block mb-4">
             <span className="text-gray-700">Address:</span>
             <Controller
@@ -85,7 +79,7 @@ function MyForm() {
             />
           </label>
 
-          {/* City */}
+
           <label className="block mb-4">
             <span className="text-gray-700">City:</span>
             <Controller
@@ -101,7 +95,7 @@ function MyForm() {
             />
           </label>
 
-          {/* State */}
+
           <label className="block mb-4">
             <span className="text-gray-700">State:</span>
             <Controller
@@ -117,7 +111,7 @@ function MyForm() {
             />
           </label>
 
-          {/* Contact Number */}
+
           <label className="block mb-4">
             <span className="text-gray-700">Contact Number:</span>
             <Controller
@@ -133,7 +127,7 @@ function MyForm() {
             />
           </label>
 
-          {/* Image */}
+
           <label className="block mb-4">
             <span className="text-gray-700">Image URL:</span>
             <Controller
@@ -149,7 +143,7 @@ function MyForm() {
             />
           </label>
 
-          {/* Email */}
+
           <label className="block mb-4">
             <span className="text-gray-700">Email:</span>
             <Controller
@@ -171,7 +165,7 @@ function MyForm() {
             />
           </label>
 
-          {/* Submit Button */}
+
           <button
             type="submit"
             className="bg-blue-500 text-white rounded py-2 px-4 w-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"

@@ -1,6 +1,4 @@
-// pages/api/get-schools.js
-
-import { schools } from './add-school'; // Import the schools array
+import { schools } from './add-school'; 
 
 export default function handler(req, res) {
   if (req.method === 'GET') {

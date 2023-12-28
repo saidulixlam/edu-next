@@ -1,4 +1,4 @@
-// components/ShowSchool.jsx
+
 
 import React, { useState, useEffect } from 'react';
 
@@ -12,7 +12,7 @@ const ShowSchool = () => {
 
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+          
           setSchools(data);
         } else {
           console.error('Failed to fetch schools');
